@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="3.50.2" />
+    <PackageReference Include="moq" Version="4.7.9" />
+    <PackageReference Include="Nunit" Version="3.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MassTransit.MessageData.Enchilada\MassTransit.MessageData.Enchilada.csproj" />
+  </ItemGroup>
+
+</Project>
