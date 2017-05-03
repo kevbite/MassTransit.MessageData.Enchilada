@@ -6,7 +6,7 @@ namespace MassTransit.MessageData.Enchilada
     {
         public string Create()
         {
-            return Guid.NewGuid().ToString();
+            return Guid.NewGuid() + ".file";
         }
     }
 }

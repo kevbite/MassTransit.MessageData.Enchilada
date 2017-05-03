@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Configuration;
+using System.IO;
 using System.Linq;
 using NUnit.Framework;
 
@@ -29,6 +29,14 @@ namespace MassTransit.MessageData.Enchilada.Tests
             }
 
             Assert.That(fileNames.Distinct().Count(), Is.EqualTo(count));
+        }
+
+        [Test]
+        public void ShouldHaveFileExtention()
+        {
+            var fileName = _fileNameCreator.Create();
+
+            Assert.That(Path.HasExtension(fileName), Is.True);
         }
     }
 }
