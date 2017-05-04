@@ -3,7 +3,7 @@
     only:
       - master
 
-  version: 0.0.{build}
+  version: 1.0.0
   install:
     - ps : .\environment-install.ps1
 
