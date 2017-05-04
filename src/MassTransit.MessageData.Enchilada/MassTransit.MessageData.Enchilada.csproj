@@ -9,4 +9,26 @@
     <PackageReference Include="MassTransit" Version="3.5.7" />
   </ItemGroup>
 
+    
+  <PropertyGroup>
+    <Title>MassTransit.MessageData.Enchilada</Title>
+    <AssemblyName>MassTransit.MessageData.Enchilada</AssemblyName>
+    <PackageId>MassTransit.MessageData.Enchilada</PackageId>
+    <Authors>Kevin Smith</Authors>
+    <Company>Kevsoft</Company>
+    <AssemblyTitle>MassTransit.MessageData.Enchilada</AssemblyTitle>
+    <Description>
+      Enchilada for MassTransit MessageData, Store your big pay loads anywhere!
+    </Description>
+    <Copyright>Copyright © Kevsoft 2017</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTags>MassTransit, Enchilada, Azure, Storage, Blob, File, Bus, MessageData, FTP</PackageTags>
+    <PackageProjectUrl>https://github.com/kevbite/MassTransit.MessageData.Enchilada</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/kevbite/MassTransit.MessageData.Enchilada.git</RepositoryUrl>
+  </PropertyGroup>
+  
 </Project>
