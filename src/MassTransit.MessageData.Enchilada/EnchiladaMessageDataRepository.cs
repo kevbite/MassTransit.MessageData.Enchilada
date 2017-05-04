@@ -18,6 +18,7 @@ namespace MassTransit.MessageData.Enchilada
             _fileNameCreator = fileNameCreator;
             _uriCreator = uriCreator;
         }
+
         public async Task<Stream> Get(Uri address, CancellationToken cancellationToken = new CancellationToken())
         {
             var reference = _enchiladaFilesystemResolver.OpenFileReference(address.AbsoluteUri);

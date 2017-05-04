@@ -11,23 +11,20 @@ namespace MassTransit.MessageData.Enchilada.FunctionalTests
         public static IMessageDataRepository Create()
         {
             var directory = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString()) + "\\";
-            var enchiladaConfiguration = new EnchiladaConfiguration()
+
+            var adapter = new FilesystemAdapterConfiguration()
             {
-                Adapters = new IEnchiladaAdapterConfiguration[]
-                {
-                    new FilesystemAdapterConfiguration()
-                    {
-                        AdapterName = "filesystem",
-                        Directory = directory,
-                    }
-                }
+                AdapterName = "filesystem",
+                Directory = directory
             };
 
-            var enchiladaFileProviderResolver = new EnchiladaFileProviderResolver(enchiladaConfiguration);
+            var resolver = new EnchiladaFileProviderResolver(new EnchiladaConfiguration()
+            {
+                Adapters = new[] {adapter}
+            });
 
-            var baseUri = new Uri("enchilada://filesystem");
-
-            var enchiladaMessageDataRepository = new EnchiladaMessageDataRepository(enchiladaFileProviderResolver, new GuidFileNameCreator(), new UriCreator(baseUri) );
+            var enchiladaMessageDataRepository = new EnchiladaMessageDataRepositoryFactory()
+                                                        .Create(resolver, new Uri("enchilada://filesystem"));
 
             return enchiladaMessageDataRepository;
         }
