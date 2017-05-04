@@ -1,7 +1,7 @@
 # MassTransit.MessageData.Enchilada
-MassTransit with Enchilada - Yum!
+_MassTransit with Enchilada - Yum!_
 
-This package allows you to send big message and not care about where the data is stored. Storing big payloads separate from you message bus messages stops your system getting clogged up.
+This package allows you to send big messages and not care about where the data is stored. Storing big payloads separate from you message bus messages stops your system getting clogged up.
 
 [![install from nuget](http://img.shields.io/nuget/v/MassTransit.MessageData.Enchilada.svg?style=flat-square)](https://www.nuget.org/packages/MassTransit.MessageData.Enchilada)
 [![downloads](http://img.shields.io/nuget/dt/MassTransit.MessageData.Enchilada.svg?style=flat-square)](https://www.nuget.org/packages/MassTransit.MessageData.Enchilada)
@@ -54,7 +54,7 @@ var messageDataRepository = new EnchiladaMessageDataRepositoryFactory()
 
 ```
 
-#### Supporting other storage adapters
+#### Supporting other storage adapters and configuration
 
 Enchilada supports many diffrent storage adapters, a few of these are _Azure blob storage_, _ftp_, _file system_. 
 
@@ -97,7 +97,7 @@ We can then publish/send it like any other MassTransit message:
 
 ```csharp
 
-busControl.Publish(message);
+bus.Publish(message);
 
 ```
 
