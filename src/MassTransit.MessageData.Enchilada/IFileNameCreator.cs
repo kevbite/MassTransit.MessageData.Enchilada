@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace MassTransit.MessageData.Enchilada
+﻿namespace MassTransit.MessageData.Enchilada
 {
     public interface IFileNameCreator
     {
