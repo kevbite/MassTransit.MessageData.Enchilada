@@ -17,7 +17,7 @@
     verbosity: normal
 
   after_build:
-    - dotnet pack .\src\MassTransit.MessageData.Enchilada\MassTransit.MessageData.Enchilada.csproj -c Release /p:Version=$env:APPVEYOR_BUILD_VERSION
+    - dotnet pack .\src\MassTransit.MessageData.Enchilada\MassTransit.MessageData.Enchilada.csproj -c Release /p:Version=$APPVEYOR_BUILD_VERSION
 
   configuration: Release
 
@@ -53,7 +53,7 @@
     verbosity: normal
 
   after_build:
-    - dotnet pack .\src\MassTransit.MessageData.Enchilada\MassTransit.MessageData.Enchilada.csproj -c Release /p:Version=$env:APPVEYOR_BUILD_VERSION
+    - dotnet pack .\src\MassTransit.MessageData.Enchilada\MassTransit.MessageData.Enchilada.csproj -c Release /p:Version=$APPVEYOR_BUILD_VERSION
 
   configuration: Release
 
