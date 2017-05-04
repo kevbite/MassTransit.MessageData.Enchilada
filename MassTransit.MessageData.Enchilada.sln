@@ -9,6 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.MessageData.Enc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.MessageData.Enchilada.FunctionalTests", "tests\MassTransit.MessageData.Enchilada.FunctionalTests\MassTransit.MessageData.Enchilada.FunctionalTests.csproj", "{F52DD7E7-35D7-4206-9719-43704442D6C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6F24B9A3-FB14-4B2C-B0E7-D94C7D14C470}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7B4B7E8C-1026-4311-BC8F-ACB385D2D9D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C8B3800D-22B8-464E-B05D-77AB320AD0EF}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +41,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76454F5B-34A7-430F-8CBA-830ACBBB65A8} = {6F24B9A3-FB14-4B2C-B0E7-D94C7D14C470}
+		{D8FEAF62-977A-414E-BC66-0D294328AB4D} = {7B4B7E8C-1026-4311-BC8F-ACB385D2D9D8}
+		{F52DD7E7-35D7-4206-9719-43704442D6C4} = {7B4B7E8C-1026-4311-BC8F-ACB385D2D9D8}
 	EndGlobalSection
 EndGlobal
