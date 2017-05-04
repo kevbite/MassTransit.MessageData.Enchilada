@@ -1,7 +1,7 @@
 # MassTransit.MessageData.Enchilada
 _MassTransit with Enchilada - Yum!_
 
-This package allows you to send big messages and not care about where the data is stored. Storing big payloads separate from you message bus messages stops your system getting clogged up.
+This package allows you to send big messages and not care about where the data is stored. Storing big payloads separate from your message bus messages stops your system from getting clogged up.
 
 [![install from nuget](http://img.shields.io/nuget/v/MassTransit.MessageData.Enchilada.svg?style=flat-square)](https://www.nuget.org/packages/MassTransit.MessageData.Enchilada)
 [![downloads](http://img.shields.io/nuget/dt/MassTransit.MessageData.Enchilada.svg?style=flat-square)](https://www.nuget.org/packages/MassTransit.MessageData.Enchilada)
@@ -16,14 +16,14 @@ PM> Install-Package MassTransit.MessageData.Enchilada
 
 ```
 
-or by using the dotnet cli:
+or by using the dotnet CLI:
 ```bash
 
 $ dotnet add package MassTransit.MessageData.Enchilada
 
 ```
 
-Once we have the package installed, we can create a `EnchiladaMessageDataRepository` using the `EnchiladaMessageDataRepositoryFactory`:
+Once the package is installed, create an `EnchiladaMessageDataRepository` using the `EnchiladaMessageDataRepositoryFactory`:
 
 ```csharp
 
@@ -40,7 +40,7 @@ var messageDataRepository = new EnchiladaMessageDataRepositoryFactory()
 
 ```
 
-Or we can support multiple adapters:
+Support for multiple adapters is also available:
 
 ```csharp
 
@@ -56,13 +56,13 @@ var messageDataRepository = new EnchiladaMessageDataRepositoryFactory()
 
 #### Supporting other storage adapters and configuration
 
-Enchilada supports many diffrent storage adapters, a few of these are _Azure blob storage_, _ftp_, _file system_. 
+Enchilada supports many diffrent storage adapters, including _Azure blob storage_, _FTP_ and _file system_. 
 
-Check out main [Enchilada project](https://github.com/sparkeh9/Enchilada) on github on how to configure these. 
+Check out the main [Enchilada project](https://github.com/sparkeh9/Enchilada) on github on how to configure these. 
 
 #### Sending a Big Message
 
-Once we have our message data repository we can now send big messages. Given we have a `BigMessage` that has a  `BigPayload` property of a type of `MessageData<byte[]>`:
+Once the message data repository is created, big messages can be easily sent. A `BigMessage` has a  `BigPayload` property this is of type `MessageData<byte[]>`:
 
 ```csharp
 
@@ -77,7 +77,7 @@ public class BigMessage
 
 ```
 
-When creating the message we need to call our message data repository that we've created above to put the big pay load into our configured storage, this will then passes back a `MessageData<byte[]>`:
+When creating a message, the message data repository that we've created above needs to be called in order to put the big payload into our configured storage, that will then pass back a `MessageData<byte[]>`:
 
 ```csharp
 var bytes = new byte[] {3, 1, 0, 4, 5, 5, 8 };
@@ -93,7 +93,7 @@ var message = new BigMessage
 
 ```
 
-We can then publish/send it like any other MassTransit message:
+It can then be published/sent like any other MassTransit message:
 
 ```csharp
 
@@ -103,7 +103,7 @@ bus.Publish(message);
 
 #### Receiving a Big Message
 
-To receive a message with a big pay load we need to configure our endpoint to use the repository for a given message type:
+To receive a message with a big payload the endpoint needs to be configure to use the repository for a given message type:
 
 ```csharp
 
@@ -119,7 +119,7 @@ var busControl = MassTransit.Bus.Factory.CreateUsingInMemory(cfg =>
 
 ```
 
-Then, with the magic wiring from MassTransit we can consume the message inside a consumer with the following:
+Then, with the magic wiring from MassTransit the message can be consumed inside a consumer with the following:
 ```csharp
 
 public class BigMessageConsumer : IConsumer<BigMessage>
@@ -136,7 +136,7 @@ public class BigMessageConsumer : IConsumer<BigMessage>
 
 ## Cleaning up Expired Data
 
-There is currently no way to automatically clean up expired data. The `EnchiladaMessageDataRepository` actually completly ignores any TTLs you pass it, so you might need to hire a sys admin to press <kbd>Ctrl</kbd>+<kbd>A</kbd>,<kbd>Shift</kbd>+<kbd>Del</kbd>, <kbd>Alt</kbd>+<kbd>Y</kbd> every week 😉.
+There is currently no way to automatically clean up expired data. The `EnchiladaMessageDataRepository` actually completely ignores any TTLs passed to it, so you might need to hire a sys admin to press <kbd>Ctrl</kbd>+<kbd>A</kbd>,<kbd>Shift</kbd>+<kbd>Del</kbd>, <kbd>Alt</kbd>+<kbd>Y</kbd> every week 😉.
 
 ## ToDo
 
