@@ -33,11 +33,15 @@ namespace MassTransit.MessageData.Enchilada
 
             var reference = _enchiladaFilesystemResolver.OpenFileReference(address.AbsoluteUri);
 
-            var writeSteam = await reference.OpenWriteAsync()
-                .ConfigureAwait(false);
+            using (var writeSteam = await reference.OpenWriteAsync()
+                .ConfigureAwait(false))
+            {
+                await stream.CopyToAsync(writeSteam)
+                    .ConfigureAwait(false);
 
-            await stream.CopyToAsync(writeSteam)
-                .ConfigureAwait(false);
+                await stream.FlushAsync(cancellationToken)
+                    .ConfigureAwait(false);
+            }
 
             return address;
         }
