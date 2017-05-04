@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MassTransit.MessageData.Enchilada.FunctionalTests
+﻿namespace MassTransit.MessageData.Enchilada.FunctionalTests
 {
     public class BigTestMessage
     {
