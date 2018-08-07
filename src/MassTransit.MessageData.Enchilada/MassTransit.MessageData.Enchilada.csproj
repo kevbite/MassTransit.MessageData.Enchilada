@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Enchilada" Version="1.0.10" />
-    <PackageReference Include="MassTransit" Version="3.5.7" />
+    <PackageReference Include="MassTransit" Version="5.1.4" />
   </ItemGroup>
 
     
